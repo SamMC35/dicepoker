@@ -40,6 +40,10 @@ for(let i = 0; i < 5; i++){
     winner.cash += pot;
 }
 
-var dice_list = [4,1,3,2,6];
+var dice_list = [1,1,1,1,1];
+
+console.log(checkhand(dice_list));
+
+var dice_list = [1,1,1,1,4];
 
 console.log(checkhand(dice_list));
