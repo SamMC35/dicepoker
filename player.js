@@ -1,15 +1,8 @@
 class Player{
-    constructor(name, initial_bet){
+    constructor(name, initial_bet, dice_roll){
         this.cash = initial_bet;
         this.name = name;
-    }
-
-    getName(){
-        return this.name;
-    }
-
-    getCash(){
-        return this.cash;
+        this.dice_roll = dice_roll;
     }
 }
 
