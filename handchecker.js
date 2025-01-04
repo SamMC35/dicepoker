@@ -48,25 +48,19 @@ function checkFourOfAKind(dice_list){
 }
 
 function checkThreeOfAKind(dice_list){
-    var no_pair = 1;
+    const countMap = new Map();
 
-    var current_num = dice_list[0];
-
-    for(let i = 1; i < dice_list.length;){
-        if(current_num == dice_list[i]){
-            no_pair += 1;
-
-            i++;
-
-            if(no_pair == 3){
-                return true;
-            }
+    dice_list.forEach(num => {
+        if(countMap.has(num)){
+            countMap.set(num, countMap.get(num) + 1);
         } else{
-            current_num = dice_list[i]
-            no_pair = 1;
+            countMap.set(num, 1);
         }
-    }
-    return false;
+    });
+
+    const values = Array.from(countMap.values());
+
+    return (values.includes(3));
 }
 
 function checkPairOrBust(dice_list){
